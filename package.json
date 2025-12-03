@@ -1,0 +1,27 @@
+{
+  "name": "banyuwangi_json",
+  "version": "1.0.0",
+  "description": "projek uas membuat endpoint untuk beberapa toko yang ada di banyuwangi",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FadillPro/bwi-marketplace.git"
+  },
+  "keywords": [
+    "api-bwi",
+    "bwi",
+    "api"
+  ],
+  "author": "FadilProo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FadillPro/bwi-marketplace/issues"
+  },
+  "homepage": "https://github.com/FadillPro/bwi-marketplace#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
