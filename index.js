@@ -11,7 +11,7 @@ const PORT = 3300;
 app.get('/', (req, res) => {
     // res.send('Testing the server');
     res.json({
-        message: 'Go to https://api-bwi-marketplace.vercel.app/integrator-products to get data'
+        message: 'https://bwi-marketplaces.vercel.app/integrator-products to see all market place in banyuwangi'
     });
 });
 
