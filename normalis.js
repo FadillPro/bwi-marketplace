@@ -13,13 +13,13 @@ function normalizeStock(input) {
     };
 }
 
-function finalPrice(base_price, tax) {
-    return base_price + tax;
+function finalPrice(base_price, tax, admin_fee) {
+    return base_price + tax + admin_fee;
 }
 
 function vendorDicount(vendor, finalPrice) {
     if (vendor == "Warung") {
-        return finalPrice - (finalPrice * 500);
+        return finalPrice - (finalPrice * 0.1);
     } else {
         return finalPrice;
     }
@@ -34,10 +34,12 @@ function normalizeCategory(name, category) {
 }
 
 function normalizeProduct(raw, vendor) {
+    const admin_fee = raw.pricing?.admin_fee || 500
+
     return {
         id: (raw.kd_produk || raw.sku || raw.id).toString() || null,
         name: raw.nm_brg || raw.productName || normalizeCategory(raw.details?.name, raw.details?.category) || null,
-        price: vendorDicount(vendor, parseInt(raw.hrg) || raw.price || finalPrice(raw.pricing?.base_price, raw.pricing?.tax)) || null,
+        price: vendorDicount(vendor, parseInt(raw.hrg) || raw.price || finalPrice(raw.pricing?.base_price, raw.pricing?.tax, admin_fee)) || null,
         stock: normalizeStock(raw.ket_stok || raw.isAvailable || raw.stock) || null,
         vendor: vendor || null,
     }
