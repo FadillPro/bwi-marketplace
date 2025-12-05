@@ -19,7 +19,7 @@ function finalPrice(base_price, tax) {
 
 function vendorDicount(vendor, finalPrice) {
     if (vendor == "Warung") {
-        return finalPrice - (finalPrice * 0.1);
+        return finalPrice - (finalPrice * 500);
     } else {
         return finalPrice;
     }
